@@ -19,4 +19,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+// Get customer data
 Route::get('customers', [CustomerController::class, 'customers']);
+
+// Store customer data
+Route::post('add_customer', [CustomerController::class, 'store']);
