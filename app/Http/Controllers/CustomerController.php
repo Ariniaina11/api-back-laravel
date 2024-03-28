@@ -18,5 +18,21 @@ class CustomerController extends Controller
         ]);
     }
 
-    // 
+    // Store customer data to DB
+    public function store(Request $request){
+        $customer = new Customer();
+        $customer->first_name = $request->first_name;
+        $customer->last_name = $request->last_name;
+        $customer->email = $request->email;
+        $customer->contact = $request->contact;
+
+        // Save to DB
+        $customer->save();
+
+        // Response
+        return response()->json([
+            'message' => 'Customer stored successfuly',
+            'code' => 200
+        ]);
+    }
 }
