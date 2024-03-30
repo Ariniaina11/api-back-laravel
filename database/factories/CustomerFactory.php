@@ -9,8 +9,6 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class CustomerFactory extends Factory
 {
-    private string $password = "12345678";
-
     /**
      * Define the model's default state.
      *
