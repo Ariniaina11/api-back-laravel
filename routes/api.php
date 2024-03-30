@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -24,3 +25,6 @@ Route::get('customers', [CustomerController::class, 'customers']);
 
 // Store customer data
 Route::post('add_customer', [CustomerController::class, 'store']);
+
+// Store user data
+Route::post('add_user', [UserController::class, 'store']);
