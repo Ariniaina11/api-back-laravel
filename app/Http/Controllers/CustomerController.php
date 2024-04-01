@@ -54,4 +54,22 @@ class CustomerController extends Controller
             'code' => 401
         ]);
     }
+
+    // Update a customer
+    public function update($id, Request $request){
+        $customer = Customer::find($id);
+        $customer->first_name = $request->first_name;
+        $customer->last_name = $request->last_name;
+        $customer->email = $request->email;
+        $customer->contact = $request->contact;
+
+        // Save to DB
+        $customer->save();
+
+        // Response
+        return response()->json([
+            'message' => 'Customer updated successfuly',
+            'code' => 200
+        ]);
+    }
 }
