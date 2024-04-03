@@ -8,7 +8,16 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
-    //
+    // Get all users
+    public function users(){
+        $users = User::all();
+
+        return response()->json([
+            'users' => $users,
+            'message' => 'Users',
+            'code' => 200 // Success
+        ]);
+    }
 
     // Store user data to DB
     public function store(Request $request){

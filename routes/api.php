@@ -33,6 +33,9 @@ Route::delete('customer/delete/{id}', [CustomerController::class, 'destroy']);
 // Update customer data
 Route::post('customer/update/{id}', [CustomerController::class, 'update']);
 
+// Get user data
+Route::get('users', [UserController::class, 'users']);
+
 // Store user data
 Route::post('add_user', [UserController::class, 'store']);
 
